@@ -5,7 +5,8 @@
 .selectricWrapper {
   position: relative;
   margin: 0 0 10px;
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   cursor: pointer;
   border: 0 none !important;
 }
@@ -16,10 +17,10 @@
 
 .selectric {
   position: relative;
-  border-radius: 2px;
+  border-radius: 6px;
   border: 1px solid #DDD;
   background: #fff;
-  height: 22px;
+  height: 35px;
 }
 
 .selectric .label {
@@ -27,11 +28,11 @@
   white-space: nowrap;
   overflow: hidden;
   margin: 0 30px 0 0;
-  padding: 0 6px;
-  font-size: 12px;
-  line-height: 22px;
-  color: #444;
-  min-height: 22px;
+  padding: 0 14px;
+  font-size: 14px;
+  line-height: 35px;
+  min-height: 35px;
+
 }
 
 .selectric .button {
@@ -40,7 +41,7 @@
   right: 0;
   top: 0;
   width: 30px;
-  height: 22px;
+  height: 35px;
   color: #BBB;
   text-align: center;
   font: 0/0 a;
@@ -49,7 +50,7 @@
 }
 
 .selectric .button:after {
-  content: "\f107";
+  content: "\f0dd";
   font-family: FontAwesome;
   position: absolute;
   top: 0;
@@ -59,8 +60,8 @@
   margin: auto;
   width: 22px;
   height: 22px;
-  font-size: 12px;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 18px;
   color: #808080;
 }
 
@@ -156,14 +157,14 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 20px;
   min-height: 20px;
 }
 
 .selectricItems li {
   display: block;
-  padding: 5px;
+  padding: 5px 14px;
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #EEE;
   color: #666;

@@ -1,5 +1,5 @@
 body{
-  color: #000;
+  color: #6d6d6d;
   font-size: 14px;
 }
 a{
@@ -33,12 +33,15 @@ a{
 .content{
   flex: 1;
   order: 2;
+  padding-top: 8px;
+  padding-bottom: 30px;
 }
 .sidebar{
   width: 255px;
   flex-shrink: 0;
   margin-right: 70px;
   order: 1;
+  padding-top: 12px;
 }
 
 .wrapper{
@@ -50,6 +53,21 @@ a{
   flex: 1 0 auto;
   padding-bottom: 20px;
 }
+h1{
+  margin: 0 0 22px 0;
+}
+p{
+  margin: 0 0 6px 0;
+  line-height: 140%;
+}
+.header1{
+  color: $purpur;
+  font-size: 26px;
+  font-family: 'Cambria', sans-serif;
+  font-weight: normal;
+  letter-spacing: -0.1px;
+}
+
 
 .footer{
   color: #fff;
@@ -57,15 +75,72 @@ a{
   a{
     color: #fff;
     text-decoration: none;
+    font-size: 12px;
+    transition: $anim;
     &:hover{
       text-decoration: underline;
     }
   }
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .f-block-1{
+    width: 232px;
+    margin-left: 30px;
+    a{
+      text-decoration: underline;
+      //border-bottom: 1px solid #fff;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+  .f-block-2{
+    width: 202px;
+    a{
+      text-decoration: underline;
+      //border-bottom: 1px solid #fff;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+  .f-block-3{
+    width: 185px;
+    font-family: 'Cambria', sans-serif;
+    font-weight: bold;
+    a{
+      font-size: 16px;
+    }
+    li{
+      margin-bottom: 4px;
+    }
+  }
+  .f-block-4{
+    width: 232px;
+  }
 }
+
+.f-share{
+  &__item{
+    &--vk{
+      &:before{
+        content: "";
+        display: inline-block;
+        @include sprite($vk);
+      }
+
+    }
+  }
+}
+
 
 .header{
   background-color: $purpur;
-  
+  //margin-bottom: 64px;
+  margin-bottom: 38px;
   a{
     text-decoration: none;
   }
@@ -165,4 +240,48 @@ a{
   background-color: $purpur;
   color: #fff;
   padding: 58px 0 38px;
+}
+
+.aside-menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  li{
+    margin: 0;
+    padding: 0;
+    +li{
+      border-top: 1px solid #d8d8d8;
+    }
+    &.active{
+      a{
+        color: #f4c400;
+        position: relative;
+        text-decoration: none;
+        padding-left: 48px;
+        &:before{
+          content: "\f0a2";
+          font-family: 'FontAwesome';
+          display: inline-block;
+          position: absolute;
+          left: 18px;
+          top: 11px;
+        }
+      }
+    }
+  }
+
+  a{
+    font-size: 14px;
+    color: $purpur;
+    text-decoration: none;
+    display: block;
+    padding: 12px 18px 8px;
+    line-height: 107%;
+    //transition: all 0.1s;
+    &:hover{
+      color: #fff;
+      background-color: $purpur;
+    }
+  }
 }
