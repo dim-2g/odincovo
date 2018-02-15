@@ -8,10 +8,32 @@ $(function() {
         advanced:{autoExpandHorizontalScroll:true}
     });
     $("#content-6").mCustomScrollbar({
-                    axis:"x",
-                    theme:"light-3",
-                    advanced:{autoExpandHorizontalScroll:true}
-                });
+        axis:"x",
+        theme:"light-3",
+        advanced:{autoExpandHorizontalScroll:true}
+    });
+
+    $('.main-gallery__slider').not('.slick-initialized').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        dots: false,
+
+    });
+
+    $('.main-review__list').not('.slick-initialized').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        dots: false
+
+    });
+
+
+
+
 
     var main_slider = $('.main-slider');
     main_slider.slick({

@@ -12,23 +12,26 @@
 }
 
 .b-news{
+  margin-bottom: 16px;
   &__title{
     font-size: 48px;
     font-weight: bold;
     color: $purpur;
     font-family: 'Cambria', sans-serif;
-    margin-bottom: 40px;
+    margin-bottom: 33px;
     letter-spacing: -1.5px;
   }
   &__list{
     height: 240px;
     overflow-y: auto;
+    margin-left: 4px;
   }
   &__item{
-    margin-bottom: 30px;
+    margin-bottom: 23px;
   }
   &__name{
     font-size: 16px;
+    margin-bottom: 2px;
     a{
       text-decoration: none;
       //border-bottom: 1px solid $purpur;
@@ -38,19 +41,109 @@
 }
 
 .b-share{
+  margin-left: 4px;
+  margin-bottom: 36px;
+  &__title{
+    color: #6d6d6d;
+    font-size: 26px;
+    font-family: "SFUIDisplay", sans-serif;
+    letter-spacing: -1.2px;
+    margin-bottom: 15px;
+  }
+  &__list{
+    margin-left: 2px;
+  }
   &__item{
+    padding-right: 2px;
     &--vk{
       &:before{
         content: "";
         display: inline-block;
         @include sprite($vk);
       }
-
+    }
+    &--facebook{
+      &:before{
+        content: "";
+        display: inline-block;
+        @include sprite($facebook);
+      }
+    }
+    &--in{
+      &:before{
+        content: "";
+        display: inline-block;
+        @include sprite($instagram);
+      }
+    }
+    &--twitter{
+      &:before{
+        content: "";
+        display: inline-block;
+        @include sprite($twitter);
+      }
     }
   }
 }
-
+.b-action{
+  margin-bottom: 46px;
+  &__title{
+    font-size: 48px;
+    font-weight: bold;
+    color: $purpur;
+    font-family: 'Cambria', sans-serif;
+    margin-bottom: 32px;
+    letter-spacing: -1.5px;
+  }
+  &__list{
+    height: 146px;
+    overflow-y: auto;
+  }
+  &__item{
+    margin-bottom: 30px;
+  }
+  &__name{
+    font-size: 16px;
+    margin-bottom: 3px;
+    a{
+      text-decoration: none;
+    }
+  }
+}
 .b-subscribe{
+  border: 1px solid $purpur;
+  margin-right: 2px;
+  height: 299px;
+  &__title{
+    font-family: "SFUIDisplay", sans-serif;
+    font-size: 24px;
+    color: $purpur;
+    margin-top: 30px;
+    margin-left: 26px;
+    letter-spacing: -1.5px;
+    margin-bottom: 40px;
+    &:before{
+      content: "";
+      display: inline-block;
+      @include sprite($sub);
+      top: 0;
+      right: 50px;
+    }
+  }
+  &__intro{
+    margin-left: 28px;
+    color: #6d6d6d;
+    font-size: 14px;
+    font-family: "SFUIDisplay", sans-serif;
+    letter-spacing: -0.7px;
+    margin-bottom: 18px;
+  }
+  &__form{
+    margin-left: 27px;
+  }
+  &__input{
+    margin-bottom: 21px;
+  }
   &__submit{
     button{
       background: linear-gradient(-3deg, #50007a 37%, #a25dca 63%);
@@ -67,6 +160,5 @@
         opacity: 0.9;
       }
     }
-
   }
 }

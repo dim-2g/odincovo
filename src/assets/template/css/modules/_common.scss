@@ -29,10 +29,12 @@ a{
 
 .f-row{
   display: flex;
+  margin-top: 26px;
+  margin-left: 8px;
 }
 .content{
   flex: 1;
-  order: 2;
+  order: 0;
   padding-top: 8px;
   padding-bottom: 30px;
 }
@@ -72,6 +74,7 @@ p{
 .footer{
   color: #fff;
   font-size: 12px;
+  order: 5;
   a{
     color: #fff;
     text-decoration: none;
@@ -125,13 +128,34 @@ p{
 
 .f-share{
   &__item{
+    padding-right: 2px;
     &--vk{
       &:before{
         content: "";
         display: inline-block;
         @include sprite($vk);
       }
-
+    }
+    &--facebook{
+      &:before{
+        content: "";
+        display: inline-block;
+        @include sprite($facebook);
+      }
+    }
+    &--in{
+      &:before{
+        content: "";
+        display: inline-block;
+        @include sprite($instagram);
+      }
+    }
+    &--twitter{
+      &:before{
+        content: "";
+        display: inline-block;
+        @include sprite($twitter);
+      }
     }
   }
 }
@@ -198,7 +222,42 @@ p{
       color: $orange;
     }
   }
-  
+  &--main{
+    background: #fff;
+    color: $purpur;
+    margin-bottom: 0;
+    .header{
+      &__body{
+        height: 105px;
+      }
+      &__logo{
+        width: 310px;
+      }
+      &__logo-link{
+        left: -8px;
+      }
+      &__contacts{
+        margin-right: 34px;
+        a{
+          color: $purpur;
+        }
+      }
+      &__menu{
+        margin-top: 10px;
+        ul{
+          a{
+            color: $purpur;
+            border-color: $purpur;
+          }
+          li.active{
+            a{
+              border-color: $purpur;
+            }
+          }
+        }
+      }
+    }
+  }
 
 }
 
