@@ -1,5 +1,18 @@
 $(function() {
 
+
+    // $('.course-slider__track-wrapper').slimScroll();
+    $(".course-slider__track-wrapper").mCustomScrollbar({
+        axis:"x",
+        //theme:"light-3",
+        advanced:{autoExpandHorizontalScroll:true}
+    });
+    $("#content-6").mCustomScrollbar({
+                    axis:"x",
+                    theme:"light-3",
+                    advanced:{autoExpandHorizontalScroll:true}
+                });
+
     var main_slider = $('.main-slider');
     main_slider.slick({
         slidesToShow: 1,
