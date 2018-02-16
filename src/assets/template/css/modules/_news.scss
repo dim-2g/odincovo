@@ -25,6 +25,7 @@
     height: 240px;
     overflow-y: auto;
     margin-left: 4px;
+    list-style-type: none;
   }
   &__item{
     margin-bottom: 23px;
@@ -98,6 +99,7 @@
   &__list{
     height: 146px;
     overflow-y: auto;
+    list-style-type: none;
   }
   &__item{
     margin-bottom: 30px;
@@ -161,4 +163,36 @@
       }
     }
   }
+}
+
+.mCSB_scrollTools .mCSB_draggerRail{
+  width: 12px !important;
+}
+.mCS-rounded-dark{
+  &.mCSB_vertical{
+
+    //width: 18px !important;
+    .mCSB_scrollTools{
+      width: 7px !important;
+      .mCSB_draggerRail{
+        width: 7px !important;
+        //margin: 0 4px;
+        //background: transparent url('../img/scroll__bg--h.jpg') left top repeat-x;
+      }    
+    }
+    .mCSB_dragger{
+      //width: 61px !important;
+      height: 43px !important;
+      .mCSB_dragger_bar{
+        margin: 0 !important;
+        height: 43px !important;  
+        width: 7px !important;
+        background: transparent url('../img/scroll-btn.png') left top no-repeat;
+      }
+    } 
+    
+  }
+}
+.mCS-rounded-dark.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar{
+  margin: 0 !important;
 }

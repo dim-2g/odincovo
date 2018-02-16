@@ -364,6 +364,7 @@
     font-size: 12px;
   }
   .slick-slide{
+    transition: $cubic;
     &[data-slick-index="0"]{
       transform: translateY(-28px);
     }
@@ -389,4 +390,37 @@
   .slick-list{
     padding: 40px 0;
   }
+
+  .slick-arrow{
+    color: transparent;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    top: 50%;
+    margin-top: -15px;
+    background: transparent;
+    border: 0 none;
+    &:before{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 7px;
+      top: 7px;
+    }
+    &.slick-prev{
+      left: -30px;
+      &:before{
+        @include sprite($arrow-left);
+      }
+    }
+    &.slick-next{
+      right: -30px;
+      &:before{
+        @include sprite($arrow-right);
+      }
+    }
+
+  }
+
 }

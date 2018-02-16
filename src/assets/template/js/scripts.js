@@ -4,12 +4,62 @@ $(function() {
     // $('.course-slider__track-wrapper').slimScroll();
     $(".course-slider__track-wrapper").mCustomScrollbar({
         axis:"x",
-        //theme:"light-3",
+        theme:"rounded-dark",
         advanced:{autoExpandHorizontalScroll:true}
     });
+
+    $(document).on('click', '.course-slider__track-wrapper img', function() {
+        _this = $(this);
+        if (_this.attr('src-big').length==0) {
+            return
+        }
+        var cont = '.course-slider__image';
+        $(cont).animate({"opacity":0.2},200,function(){
+            $(cont + ' img').attr('src', _this.attr('src-big'));    
+            $(cont).animate({"opacity":1},500);
+        })
+        
+        return;
+    });
+
+
+    $(".b-news__list").mCustomScrollbar({
+        keyboard:{scrollType:"stepped"},
+        mouseWheel:{scrollAmount:188},
+        theme:"rounded-dark",
+        autoExpandScrollbar:true,
+        //snapAmount:188,
+        //snapOffset:65
+    });
+
+    $(".b-action__list").mCustomScrollbar({
+        keyboard:{scrollType:"stepped"},
+        mouseWheel:{scrollAmount:188},
+        theme:"rounded-dark",
+        autoExpandScrollbar:true,
+        //snapAmount:188,
+        //snapOffset:65
+    });
+
+   
+
+
+    $("#content-6-").mCustomScrollbar({
+        scrollButtons:{enable:true,scrollType:"stepped"},
+        keyboard:{scrollType:"stepped"},
+        mouseWheel:{scrollAmount:188},
+        theme:"rounded-dark",
+        autoExpandScrollbar:true,
+        snapAmount:188,
+        snapOffset:65,
+        axis:"x",
+    });
+
+//rounded-dark
+//dark-thick
     $("#content-6").mCustomScrollbar({
         axis:"x",
-        theme:"light-3",
+        theme:"rounded-dark",
         advanced:{autoExpandHorizontalScroll:true}
     });
 
@@ -22,7 +72,8 @@ $(function() {
 
     });
 
-    $('.main-review__list').not('.slick-initialized').slick({
+    var review_list = $('.main-review__list');
+    review_list.not('.slick-initialized').slick({
         slidesToShow: 6,
         slidesToScroll: 1,
         infinite: true,
@@ -31,6 +82,41 @@ $(function() {
 
     });
 
+
+    setIndexSlide = function(obj) {
+        $('.slick-slide', obj).attr('slick-ind','');
+        $('.slick-active', obj).each(function(i){
+                $(this).attr('slick-ind',i);
+        })    
+    }
+
+    setPrevIndexSlide = function(obj, ind) {
+
+        $('.slick-slide', obj).attr('slick-ind','');
+        cnt_active = $('.slick-active', obj).length;
+        j = 0;    
+        for (i=ind; i<(ind+cnt_active); i++) {
+           $('[data-slick-index="'+i+'"]',obj).attr('slick-ind',j);
+           j++;
+        }
+    }
+
+    setIndexSlide(review_list);
+    
+
+    review_list.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      review_list.animate({"opacity":0.2}, 100);
+      setPrevIndexSlide(review_list, nextSlide);
+    });
+
+    review_list.on('edge', function(event, slick, currentSlide, nextSlide){
+      
+    });
+
+    review_list.on('afterChange', function(event, slick, currentSlide, nextSlide){
+      //setIndexSlide(review_list);
+      review_list.animate({"opacity":1}, 100);
+    });
 
 
 
