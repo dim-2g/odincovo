@@ -232,7 +232,7 @@
       content: "";
       display: inline-block;
       position: absolute;
-      left: 7px;
+      left: 11px;
       top: 7px;
     }
     &.slick-prev{
@@ -281,13 +281,17 @@
     @media($bp-larger-than-desktop) {
       left: -57px;
       bottom: 0;
-      top: -38px;
+      //top: -38px;
     }
     img{
       height: 100%;
     }
   }
   &__info-box{
+    text-align: center;
+    @media($bp-larger-than-tablet) {
+      text-align: left;
+    }
     @media($bp-larger-than-desktop){
       text-align: right;
     }
@@ -452,7 +456,7 @@
   }
   &__box{
     padding-top: 105px;
-    min-height: 616px;
+    min-height: 625px;
     @media($bp-larger-than-tablet){
       padding-top: 115px;
     }
@@ -681,7 +685,7 @@
 
 .main-gallery{
   background: #fff url('../img/wave.jpg') center top no-repeat;
-  min-height: 616px;
+  min-height: 625px;
   padding-top: 164px;
   margin-bottom: 8px;
   padding-left: 30px;
@@ -732,7 +736,7 @@
       content: "";
       display: inline-block;
       position: absolute;
-      left: 7px;
+      left: 11px;
       top: 7px;
     }
     &.slick-prev{
@@ -856,7 +860,7 @@
       content: "";
       display: inline-block;
       position: absolute;
-      left: 7px;
+      left: 11px;
       top: 7px;
     }
     &.slick-prev{

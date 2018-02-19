@@ -1210,7 +1210,7 @@ select.selectric {
       content: "";
       display: inline-block;
       position: absolute;
-      left: 7px;
+      left: 11px;
       top: 7px; }
     .curses .slick-arrow.slick-prev {
       left: -30px; }
@@ -1255,13 +1255,17 @@ select.selectric {
     @media (min-width: 1000px) {
       .land__girl {
         left: -57px;
-        bottom: 0;
-        top: -38px; } }
+        bottom: 0; } }
     .land__girl img {
       height: 100%; }
-  @media (min-width: 1000px) {
-    .land__info-box {
-      text-align: right; } }
+  .land__info-box {
+    text-align: center; }
+    @media (min-width: 750px) {
+      .land__info-box {
+        text-align: left; } }
+    @media (min-width: 1000px) {
+      .land__info-box {
+        text-align: right; } }
   .land__info {
     width: auto;
     position: relative;
@@ -1414,7 +1418,7 @@ select.selectric {
       margin-bottom: 95px; } }
   .wave__box {
     padding-top: 105px;
-    min-height: 616px; }
+    min-height: 625px; }
     @media (min-width: 750px) {
       .wave__box {
         padding-top: 115px; } }
@@ -1660,7 +1664,7 @@ select.selectric {
 
 .main-gallery {
   background: #fff url("../img/wave.jpg") center top no-repeat;
-  min-height: 616px;
+  min-height: 625px;
   padding-top: 164px;
   margin-bottom: 8px;
   padding-left: 30px;
@@ -1703,7 +1707,7 @@ select.selectric {
       content: "";
       display: inline-block;
       position: absolute;
-      left: 7px;
+      left: 11px;
       top: 7px; }
     .main-gallery .slick-arrow.slick-prev {
       left: -30px; }
@@ -1822,7 +1826,7 @@ select.selectric {
       content: "";
       display: inline-block;
       position: absolute;
-      left: 7px;
+      left: 11px;
       top: 7px; }
     .main-review .slick-arrow.slick-prev {
       left: -30px; }
