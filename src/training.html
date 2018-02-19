@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Главная страница</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet"> 
     <link rel="stylesheet" href="/assets/template/vendor/slick/slick.css">
     <link rel="stylesheet" href="/assets/template/vendor/selectric/selectric.css">
     <link rel="stylesheet" href="/assets/template/vendor/magnific-popup/magnific-popup.css">
@@ -13,46 +13,50 @@
 </head>
 <body>
 
-<script>document.body.classList.add("index");</script>
 
 
 <div class="wrapper">
 
+    <div class="header-wrapper">
+        <header class="header">
 
-    <header class="header header--main">
-        <div class="container">
-            <div class="header__body">
-                <div class="header__logo">
-                    <a href="/" class="header__logo-link">
-                        <img src="/assets/template/img/logo-main.png" alt="">
-                    </a>
-                </div>
-                <div class="header__menu">
-                    <ul id="topmenu">
-                        <li><a href="#">Стоимость</a></li>
-                        <li class="active"><a href="#">Курсы</a></li>
-                        <li><a href="#">Контакты</a></li>
-                        <li><a href="#">Галерея</a></li>
-                    </ul>
-                </div>
-                <div class="header__contacts">
-                    <div class="header-phone">
-                        <a href="tel:+74950000000" class="header-phone__item">
-                            <span class="header-phone__code">+7 (495)</span> 000-00-00
+            <div class="container">
+                <div class="header__body">
+                    <div class="header__logo">
+                        <a href="/" class="header__logo-link">
+                            <img src="/assets/template/img/logo.png" alt="">
                         </a>
                     </div>
-                    <div class="header-callback">
-                        <a href="#" class="header-callback__item">заказать обратный звонок</a>
+                    <div class="header__menu">
+                        <ul id="topmenu">
+                            <li><a href="#">Стоимость</a></li>
+                            <li class="active"><a href="#" data-goto=".curses">Курсы</a></li>
+                            <li><a href="#" data-goto=".main-contacts">Контакты</a></li>
+                            <li><a href="#" data-goto=".main-gallery">Галерея</a></li>
+                        </ul>
                     </div>
-                </div>
+                    <div class="header__contacts">
+                        <div class="header-phone">
+                            <a href="tel:+74950000000" class="header-phone__item">
+                                <span class="header-phone__code">+7 (495)</span> 000-00-00
+                            </a>
+                        </div>
+                        <div class="header-callback">
+                            <a href="#" class="header-callback__item">заказать обратный звонок</a>
+                        </div>
+                    </div>
 
+                    <div class="fa fa-bars header__burger" data-mfp-src="#topmenu"></div>
+
+                </div>
             </div>
-        </div>
-    </header>
+
+        </header>
+    </div>
 
 <div class="content-wrapper">
     <div class="container">
-        <div class="f-row">
+        <div class="f-row f-row__content">
             <div class="content news-page">
                 <h1 class="header1">Подготовка к школе</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>

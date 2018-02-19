@@ -16,36 +16,61 @@
 <script>document.body.classList.add("index");</script>
 
 
+<!--div class="loaderArea">
+    <div class="loader">
+        <div class="loader__center">
+            <img src="/assets/template/img/Eclipse-1s-200px.svg" alt="">
+        </div>
+    </div>
+</div-->
+
+
 <div class="wrapper">
 
-
-    <header class="header header--main">
-        <div class="container">
-            <div class="header__body">
-                <div class="header__logo">
-                    <a href="/" class="header__logo-link">
-                        <img src="/assets/template/img/logo-main.png" alt="">
-                    </a>
-                </div>
-                <div class="header__menu">
-                    <ul id="topmenu">
-                        <li><a href="#">Стоимость</a></li>
-                        <li class="active"><a href="#">Курсы</a></li>
-                        <li><a href="#">Контакты</a></li>
-                        <li><a href="#">Галерея</a></li>
-                    </ul>
-                </div>
-                <div class="header__contacts">
-                    <div class="header-phone">
-                        <a href="tel:+74950000000" class="header-phone__item">
-                            <span class="header-phone__code">+7 (495)</span> 000-00-00
+    <div class="header-wrapper">
+        <header class="header header--main">
+            <div class="container">
+                <div class="header__body">
+                    <div class="header__logo">
+                        <a href="/" class="header__logo-link">
+                            <img src="/assets/template/img/logo-main.png" alt="">
                         </a>
                     </div>
-                    <div class="header-callback">
-                        <a href="#" class="header-callback__item">заказать обратный звонок</a>
+                    <div class="header__menu">
+                        <ul id="topmenu">
+                            <li><a href="#">Стоимость</a></li>
+                            <li class="active">
+                                <a href="#" data-goto=".curses">Курсы</a>
+                                <ul>
+                                    <li><a href="#" data-goto=".curses__item--school">Подготовка к школе</a></li>
+                                    <li><a href="#" data-goto=".curses__item--ege">Подготовка к ОГЭ/ЕГЭ</a></li>
+                                    <li><a href="#" data-goto=".curses__item--dance">Танцы</a></li>
+                                    <li><a href="#" data-goto=".curses__item--arithmetic">Ментальная арифметика</a></li>
+                                    <li><a href="#" data-goto=".curses__item--reading">Скорочтение и развитие памяти</a></li>
+                                    <li><a href="#" data-goto=".curses__item--calligraphy">Каллиграфия</a></li>
+                                    <li><a href="#" data-goto=".curses__item--acting">Актерское мастерство</a></li>
+                                    <li><a href="#" data-goto=".curses__item--singing">Вокал</a></li>
+                                    <li><a href="#" data-goto=".curses__item--chess">Шахматы</a></li>
+                                    <li><a href="#" data-goto=".curses__item--drafting">Черчение</a></li>
+                                    <li><a href="#" data-goto=".curses__item--holiday">Организация праздников для детей</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" data-goto=".main-contacts">Контакты</a></li>
+                            <li><a href="#" data-goto=".main-gallery">Галерея</a></li>
+                        </ul>
                     </div>
+                    <div class="header__contacts">
+                        <div class="header-phone">
+                            <a href="tel:+74950000000" class="header-phone__item">
+                                <span class="header-phone__code">+7 (495)</span> 000-00-00
+                            </a>
+                        </div>
+                        <div class="header-callback">
+                            <a href="#" class="header-callback__item">заказать обратный звонок</a>
+                        </div>
+                    </div>
+                    <div class="fa fa-bars header__burger" data-mfp-src="#topmenu"></div>
                 </div>
-
             </div>
-        </div>
-    </header>
+        </header>
+    </div>

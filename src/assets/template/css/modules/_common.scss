@@ -1,7 +1,22 @@
 body{
   color: #6d6d6d;
   font-size: 14px;
+  .slideTop {
+    transform: translateY(-100%);
+  }
+  &.fixed-header{
+    .slideTop {
+      transform: translateY(0%);
+      position: fixed;
+      top: 0;
+      transition: $cubic;
+      z-index: 200;
+      box-shadow: 0 0 3px 0 rgba(0,0,0,0.5);
+    }
+  }
 }
+
+
 a{
   color: $purpur;
   outline: none;
@@ -29,27 +44,41 @@ a{
 
 .f-row{
   display: flex;
-  margin-top: 26px;
-  margin-left: 8px;
+  &__content{
+    flex-direction: column;
+    @media($bp-larger-than-tablet) {
+      flex-direction: row;
+    }
+  }
 }
 .content{
   flex: 1;
   order: 0;
   padding-top: 8px;
   padding-bottom: 30px;
+  img{
+    max-width: 100%;
+  }
 }
 .sidebar{
-  width: 255px;
+  width: 252px;
   flex-shrink: 0;
-  margin-right: 70px;
-  order: 1;
+  order: 2;
   padding-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  @media($bp-larger-than-tablet){
+    margin-left: 0;
+    margin-right: 70px;
+    order: 1;
+  }
 }
 
 .wrapper{
   flex-direction: column;
   display: flex;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 .content-wrapper {
   flex: 1 0 auto;
@@ -68,6 +97,7 @@ p{
   font-family: 'Cambria', sans-serif;
   font-weight: normal;
   letter-spacing: -0.1px;
+  line-height: 100%;
 }
 
 
@@ -75,6 +105,14 @@ p{
   color: #fff;
   font-size: 12px;
   order: 5;
+  .f-row{
+    align-items: center;
+    flex-direction: column;
+    @media($bp-larger-than-tablet) {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
   a{
     color: #fff;
     text-decoration: none;
@@ -90,8 +128,13 @@ p{
     padding: 0;
   }
   .f-block-1{
-    width: 232px;
-    margin-left: 30px;
+    width: 230px;
+    margin-left: 0;
+    margin-bottom: 20px;
+    @media($bp-larger-than-tablet){
+      margin-left: 30px;
+      width: 232px;
+    }
     a{
       text-decoration: underline;
       //border-bottom: 1px solid #fff;
@@ -101,7 +144,11 @@ p{
     }
   }
   .f-block-2{
-    width: 202px;
+    width: 230px;
+    margin-bottom: 20px;
+    @media($bp-larger-than-tablet){
+      width: 202px;
+    }
     a{
       text-decoration: underline;
       //border-bottom: 1px solid #fff;
@@ -111,9 +158,13 @@ p{
     }
   }
   .f-block-3{
-    width: 185px;
+    width: 230px;
     font-family: 'Cambria', sans-serif;
     font-weight: bold;
+    margin-bottom: 20px;
+    @media($bp-larger-than-tablet){
+      width: 185px;
+    }
     a{
       font-size: 16px;
     }
@@ -122,11 +173,18 @@ p{
     }
   }
   .f-block-4{
-    width: 232px;
+    width: 230px;
+    margin-bottom: 20px;
+    @media($bp-larger-than-tablet){
+      width: 232px;
+    }
   }
 }
 
 .f-share{
+  &__title{
+    margin-bottom: 3px;
+  }
   &__item{
     padding-right: 2px;
     &--vk{
@@ -165,6 +223,7 @@ p{
   background-color: $purpur;
   //margin-bottom: 64px;
   margin-bottom: 38px;
+  width: 100%;
   a{
     text-decoration: none;
   }
@@ -172,21 +231,43 @@ p{
     display: flex;
     padding: 8px 0;
     align-items: center;
-    height: 97px;
+    height: 80px;
+    justify-content: space-between;
+    @media($bp-larger-than-mobile){
+      height: 97px;
+    }
   }
   &__logo{
-    width: 300px;
     flex-shrink: 0;
     position: relative;
     height: 100%;
+    width: 75px;
+    @media($bp-larger-than-desktop){
+      width: 300px;
+    }
+
+    img{
+      width: 75px;
+      @media($bp-larger-than-mobile){
+        width: auto;
+      }
+
+    }
   }
   &__logo-link{
     position: absolute;
-    left: 36px;
+    left: 0;
     top: 0;
+    @media($bp-larger-than-desktop){
+      left: 36px;
+    }
   }
   &__menu{
     flex: 1;
+    display: none;
+    @media($bp-larger-than-tablet){
+      display: block;
+    }
     ul{
       display: flex;
       justify-content: center;
@@ -213,6 +294,19 @@ p{
       }
     }
   }
+  .fa-bars {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 26px;
+    opacity: 0.9;
+    margin-left: 10px;
+    margin-right: 8px;
+    z-index: 999;
+    @media($bp-larger-than-tablet){
+      display: none;
+    }
+  }
   &__contacts{
     color: $orange;
     text-align: right;
@@ -228,34 +322,104 @@ p{
     margin-bottom: 0;
     .header{
       &__body{
-        height: 105px;
+        height: 80px;
+        @media($bp-larger-than-mobile){
+          height: 105px;
+        }
+
       }
       &__logo{
-        width: 310px;
+        width: 70px;
+        @media($bp-larger-than-desktop){
+          width: 310px;
+        }
       }
       &__logo-link{
         left: -8px;
       }
       &__contacts{
-        margin-right: 34px;
+        margin-right: 0;
+        @media($bp-larger-than-tablet){
+          margin-right: 34px;
+        }
         a{
           color: $purpur;
         }
       }
       &__menu{
         margin-top: 10px;
+        display: none;
+        @media($bp-larger-than-tablet){
+          display: block;
+        }
+        > ul > li{
+          padding: 17px 0;
+        }
         ul{
           a{
             color: $purpur;
             border-color: $purpur;
           }
           li.active{
+            &:hover{
+              a{
+                border: 0 none;
+              }
+            }
             a{
               border-color: $purpur;
             }
           }
+          li{
+            position: relative;
+            z-index: 100;
+            &:hover{
+              ul{
+                display: block;
+              }
+            }
+          }
+          ul{
+            padding: 20px 10px;
+            border: 1px solid $purpur;
+            border-radius: 8px;
+            background-color: #fff;
+            min-width: 231px;
+            position: absolute;
+            display: none;
+            top: 100%;
+            left: -22px;
+            &:before{
+              content: "";
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              position: absolute;
+              left: 40px;
+              top: -11px;
+              border-left: 1px solid $purpur;
+              border-top: 1px solid $purpur;
+              transform: rotate(45deg);
+              background-color: #fff;
+            }
+
+            li{
+              margin-bottom: 10px;
+              font-size: 12px;
+              a{
+                border-bottom: 1px solid #f5f2f7 !important;
+                text-decoration: none;
+                &:hover{
+                  border-bottom: 1px solid $purpur !important;
+                }
+              }
+            }
+          }
         }
       }
+    }
+    .fa-bars {
+      color: $purpur;
     }
   }
 
@@ -265,11 +429,14 @@ p{
   margin-top: 10px;
   margin-bottom: 5px;
   &__item{
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
     padding-left: 28px;
     position: relative;
     letter-spacing: -0.7px;
+    @media($bp-larger-than-mobile){
+      font-size: 20px;
+    }
     &:before{
       content: "";
       display: inline-block;
@@ -299,6 +466,31 @@ p{
   background-color: $purpur;
   color: #fff;
   padding: 58px 0 38px;
+  .f-row{
+    align-items: center;
+    flex-direction: column;
+
+    @media($bp-larger-than-tablet){
+      align-items: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
+.footer-main{
+  min-height: 135px;
+  background-color: $purpur;
+  color: #fff;
+  padding: 58px 0 38px;
+  .f-row{
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .f-share__title{
+    margin-bottom: 3px;
+  }
 }
 
 .aside-menu{
@@ -344,3 +536,73 @@ p{
     }
   }
 }
+
+.bold{
+  font-weight: bold;
+}
+
+
+.loaderArea {
+  background: #fff;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100000; }
+.loaderArea .cogs-live {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -16px;
+  margin-top: -16px;
+}
+
+select.selectric{
+  width: 100%;
+  max-width: 330px;
+}
+
+
+
+
+
+.mobile-menu{
+  #topmenu{
+    margin: 75px 20px 50px 20px;
+    list-style-type: none;
+    li{
+      margin-bottom: 20px;
+      ul{
+        margin: 20px 0 20px 20px;
+        list-style-type: none;
+        li{
+          margin-bottom: 16px;
+        }
+        a{
+          text-transform: none;
+          font-size: 16px;
+        }
+      }
+    }
+    a{
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 20px;
+
+    }
+  }
+  .mfp-close{
+    color: #fff;
+  }
+  .mfp-container:before{
+    vertical-align: top;
+  }
+}
+

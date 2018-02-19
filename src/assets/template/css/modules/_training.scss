@@ -52,6 +52,9 @@
     background-color: #fff;
     width: 100%;
   }
+  select{
+    padding-left: 10px;
+  }
   textarea{
     border: 1px solid #dde0e1;
     border-radius: 6px;
@@ -159,39 +162,5 @@
   }
 }
 
-.main-review__list{
-  .slick-list{
-    background: #fff url('../img/gallery__bg.jpg') center top no-repeat;
-  }
-}
 
 
-.main-review{
-  padding: 40px 0;
-  .slick-slide{
-    &[slick-ind="0"]{
-      transform: translateY(-28px);
-    }
-    &[slick-ind="1"]{
-      transform: translateY(38px);
-    }
-    &[slick-ind="2"]{
-      transform: translateY(-47px);
-    }
-    &[slick-ind="3"]{
-      transform: translateY(0px);
-    }
-    &[slick-ind="4"]{
-      transform: translateY(-42px);
-    }
-    &[slick-ind="5"]{
-      transform: translateY(26px);
-    }
-    &[slick-ind="8"]{
-      transform: translateY(40px);
-    }
-  }
-  .slick-list{
-    padding: 50px 0;
-  }
-}

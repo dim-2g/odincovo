@@ -96,11 +96,11 @@ gulp.task('sass:dev', function() {
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(sourcemaps.write())
-        //.pipe(autoprefixer({
-        //    browsers: ['last 5 versions'],
-        //    cascade: false
-        //}))
+        //.pipe(sourcemaps.write())
+        .pipe(autoprefixer({
+            browsers: ['last 5 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest(path.src.css))
         .pipe(browserSync.reload({stream: true}));
 });
